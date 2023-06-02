@@ -1,5 +1,5 @@
 const { uploadImage } = require("../config/s3Config");
-const uploadedImages = require("../models/image");
+const uploadedImages = require("../models/image.model");
 const config =require('../config/config')
 
 imageUploadController = async (req, res) => {
