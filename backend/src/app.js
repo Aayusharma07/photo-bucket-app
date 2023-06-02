@@ -2,12 +2,16 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
 const config = require("./config/config");
 const db = require("./config/dbConnection");
 const routes = require("./routes");
 const app = express();
 
 // Middleware
+
+//logger
+app.use(morgan("dev"));
 // enable cors
 app.use(cors());
 app.options("*", cors());
