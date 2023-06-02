@@ -4,6 +4,7 @@ const { upload } = require("../../config/multerConfig");
 
 const router = express.Router();
 
-router.post("/upload", upload.single('file'), imageUploadController);
+router.post("/upload/image", upload.single('file'), imageUploadController);
+router.get('/images/all', getAllImagesController);
 
 module.exports = router;

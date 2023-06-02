@@ -27,7 +27,7 @@ const uploadImage = (file) => {
         console.error(err);
         reject("Failed to upload file to S3");
       } else {
-        resolve(data.Location);
+        resolve(data);
       }
     });
   });
