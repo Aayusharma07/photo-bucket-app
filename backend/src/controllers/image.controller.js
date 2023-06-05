@@ -1,8 +1,9 @@
 const { uploadImage } = require("../config/s3Config");
 const uploadedImages = require("../models/image.model");
-const config =require('../config/config')
+const config = require("../config/config");
 
 imageUploadController = async (req, res) => {
+  console.log(req.userId);
   const file = req.file;
   try {
     // Check if a file was provided
@@ -17,6 +18,7 @@ imageUploadController = async (req, res) => {
       orignalname: data.key,
       filepath: `${config.cloudfrontUrl}/${data.key}`,
       category: req.body.category,
+      createdBy: req.userId,
     });
     imageData.save().then(() => {
       return res.send({

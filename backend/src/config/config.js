@@ -14,6 +14,7 @@ const envVariablesSchema = joi
     AWS_BUCKET_REGION: joi.string().required(),
     CLOUDFRONT_URL: joi.string().required(),
     MONGODB_URL: joi.string().required(),
+    JWT_SECRET: joi.string().required(),
   })
   .unknown();
 
@@ -33,6 +34,7 @@ const config = {
   bucketName: envVars.AWS_BUCKET_NAME,
   cloudfrontUrl: envVars.CLOUDFRONT_URL,
   mongodbUrl: envVars.MONGODB_URL,
+  jwtsecret: envVars.JWT_SECRET,
 };
 
 module.exports = config;

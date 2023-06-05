@@ -15,6 +15,10 @@ const uploadedImageSchema = new mongoose.Schema(
     category: {
       type: String,
     },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   { timestamps: true }
 );
