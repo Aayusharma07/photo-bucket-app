@@ -3,7 +3,6 @@ const uploadedImages = require("../models/image.model");
 const config = require("../config/config");
 
 imageUploadController = async (req, res) => {
-  console.log(req.userId);
   const file = req.file;
   try {
     // Check if a file was provided
